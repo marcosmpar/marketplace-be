@@ -4,14 +4,14 @@ class AdController {
   async index (req, res) {
     const filters = {}
 
-    if (req.query.price_min || req.query.params.price_max) {
+    if (req.query.price_min || req.query.price_max) {
       filters.price = {}
 
       if (req.query.price_min) {
         filters.price.$gte = req.query.price_min
       }
 
-      if (req.params.price_max) {
+      if (req.query.price_max) {
         filters.price.$lte = req.query.price_max
       }
     }
@@ -38,7 +38,6 @@ class AdController {
 
   async store (req, res) {
     const ad = await Ad.create({ ...req.body, author: req.userId })
-
     return res.json(ad)
   }
 
