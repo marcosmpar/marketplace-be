@@ -1,2 +1,2 @@
 # marketplace-be
-Aplicação nodejs App Marketplace
+Aplicação back-end nodejs, App Marketplace
